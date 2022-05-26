@@ -1,0 +1,139 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,100,300);
+
+body {
+  margin: 0;
+}
+.wrapper {
+  position: relative;
+  background: #f5f5f5;
+}
+/* ハンバーガーメニュー */
+.hamburger {
+  width: 40px;
+  height: 40px;
+  background: #000;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  z-index: 999;
+}
+.hamburger span {
+  display : block;
+  position: absolute;
+  width   : 30px;
+  height  : 2px ;
+  left    : 6px;
+  background : #fff;
+  -webkit-transition: 0.5s ease-in-out;
+  -moz-transition   : 0.5s ease-in-out;
+  transition        : 0.5s ease-in-out;
+}
+.hamburger span:nth-child(1) {
+  top: 10px;
+}
+.hamburger span:nth-child(2) {
+  top: 20px;
+}
+.hamburger span:nth-child(3) {
+  top: 30px;
+}
+
+/* ナビ開いてる時のボタン */
+.hamburger.active span:nth-child(1) {
+  top : 16px;
+  left: 6px;
+  -webkit-transform: rotate(315deg);
+  -moz-transform   : rotate(315deg);
+  transform        : rotate(315deg);
+}
+
+.hamburger.active span:nth-child(2),
+.hamburger.active span:nth-child(3) {
+  top: 16px;
+  -webkit-transform: rotate(-315deg);
+  -moz-transform   : rotate(-315deg);
+  transform        : rotate(-315deg);
+}
+
+/* メニュー */
+.menu {
+  width: 230px;
+  background: #000;
+  color: #fff;
+  position: absolute;
+  padding-top: 40px;
+  transform: translate(-300px);
+  transition: 0.3s ease-out;
+}
+/* メニューにopenクラスがついたときのスタイル */
+.menu.open {
+  transform: translate(0);
+  transition: 0.3s ease-out;
+}
+
+ul,li{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+#accordion_menu > li {
+  margin-bottom: -1px;
+}
+#accordion_menu a{
+  color: #bbb;
+}
+#accordion_menu a[data-toggle="collapse"]{
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  position: relative;
+}
+#accordion_menu a[data-toggle="collapse"]:hover{
+  background: #e7e7e7;
+}
+#accordion_menu a[data-toggle="collapse"]::after{
+  content:"";
+  display: block;
+  width: 8px;
+  height: 8px;
+  border-top: #666 1px solid;
+  border-right: #666 1px solid;
+  position: absolute;
+  right: 15px;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+#accordion_menu a[aria-expanded=false]::after{
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  transition-duration: 0.3s;
+}
+#accordion_menu a[aria-expanded=true]::after{
+  -webkit-transform: rotate(135deg);
+  -ms-transform: rotate(135deg);
+  transform: rotate(135deg);
+  transition-duration: 0.3s;
+}
+[id^="menu"] li{
+  padding: 10px 10px 10px 20px;
+}
