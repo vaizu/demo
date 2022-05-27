@@ -88,6 +88,7 @@ body {
 .menu.open {
   transform: translate(0);
   transition: 0.3s ease-out;
+  z-index: 998;
 }
 
 ul,li{
@@ -141,4 +142,8 @@ ul,li{
 
 footer {
   margin-top: auto;
+}
+
+.text1{
+  font-size: 15px;
 }
