@@ -17,6 +17,7 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,100,300);
 
 body {
+  max-height: 100%;
   margin: 0;
 }
 .wrapper {
@@ -136,4 +137,8 @@ ul,li{
 }
 [id^="menu"] li{
   padding: 10px 10px 10px 20px;
+}
+
+footer {
+  margin-top: auto;
 }
