@@ -3,4 +3,6 @@ class HomesController < ApplicationController
   end
   def hazimete
   end
+  def mail
+  end
 end
