@@ -7,4 +7,6 @@ class HomesController < ApplicationController
   end
   def faq
   end
+  def editer
+  end
 end
