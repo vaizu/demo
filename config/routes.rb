@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :news
   root to: "homes#top"
 
   get 'hazimete' => 'homes#hazimete'
