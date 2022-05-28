@@ -12,16 +12,16 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :title %>
+    <%= form.label :タイトル %></br>
     <%= form.text_field :title %>
   </div>
 
-  <div class="field">
-  　<%= form.label :content %>
+  <div class="field w-50">
+  　<%= form.label :内容%></br>
     <%= form.rich_text_area :content %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "投稿する", class: "btn btn-info col-sm-1" %>
   </div>
 <% end %>
