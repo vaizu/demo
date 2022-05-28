@@ -5,4 +5,6 @@ class HomesController < ApplicationController
   end
   def mail
   end
+  def faq
+  end
 end
