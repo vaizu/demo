@@ -1,0 +1,56 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Therapists</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>GirlType</th>
+      <th>Age</th>
+      <th>Height</th>
+      <th>Cup</th>
+      <th>Bust</th>
+      <th>Waist</th>
+      <th>Hips</th>
+      <th>Catch copy</th>
+      <th>Twitter url</th>
+      <th>Diary</th>
+      <th>Therapist message</th>
+      <th>Shop message</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @therapists.each do |therapist| %>
+      <tr>
+        <td><%= therapist.name %></td>
+        <td><%= therapist.girl_type %></td>
+        <td><%= therapist.age %></td>
+        <td><%= therapist.height %></td>
+        <td><%= therapist.cup %></td>
+        <td><%= therapist.bust %></td>
+        <td><%= therapist.waist %></td>
+        <td><%= therapist.hips %></td>
+        <td><%= therapist.catch_copy %></td>
+        <td><%= therapist.twitter_url %></td>
+        <td><%= therapist.diary %></td>
+        <td><%= therapist.therapist_message %></td>
+        <td><%= therapist.shop_message %></td>
+        <% therapist.images.each do |image| %>
+        <td>
+          <%= image_tag(image, width:100) %>
+        </td>
+        <% end %>
+        <td><%= link_to 'Show', therapist %></td>
+        <td><%= link_to 'Edit', edit_therapist_path(therapist) %></td>
+        <td><%= link_to 'Destroy', therapist, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Therapist', new_therapist_path %>

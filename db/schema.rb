@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_05_28_161153) do
+ActiveRecord::Schema.define(version: 2022_05_30_065506) do
 
   create_table "action_text_rich_texts", force: :cascade do |t|
     t.string "name", null: false
@@ -53,6 +53,24 @@ ActiveRecord::Schema.define(version: 2022_05_28_161153) do
   create_table "news", force: :cascade do |t|
     t.string "title"
     t.text "content"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "therapists", force: :cascade do |t|
+    t.string "name"
+    t.string "girl_type"
+    t.integer "age"
+    t.integer "height"
+    t.string "cup"
+    t.integer "bust"
+    t.integer "waist"
+    t.integer "hips"
+    t.string "catch_copy"
+    t.string "twitter_url"
+    t.string "diary"
+    t.text "therapist_message"
+    t.text "shop_message"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
