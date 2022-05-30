@@ -1,0 +1,87 @@
+<%= form_with(model: therapist) do |form| %>
+  <% if therapist.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(therapist.errors.count, "error") %> prohibited this therapist from being saved:</h2>
+
+      <ul>
+        <% therapist.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :名前 %></br>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :体験入店・新人 %></br>
+    <%= form.select(:girl_type, ["通常", "体験入店", "NEW FACE"]) %>
+  </div>
+
+  <div class="field">
+    <%= form.label :年齢 %></br>
+    <%= form.number_field :age %>歳
+  </div>
+
+  <div class="field">
+    <%= form.label :身長 %></br>
+    <%= form.number_field :height %>cm
+  </div>
+
+  <div class="field">
+    <%= form.label :カップ %></br>
+    <%= form.select(:cup, ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P"]) %>カップ
+  </div>
+
+  <div class="field">
+    <%= form.label :バストサイズ %></br>
+    <%= form.number_field :bust %>cm
+  </div>
+
+  <div class="field">
+    <%= form.label :ウエスト %></br>
+    <%= form.number_field :waist %>cm
+  </div>
+
+  <div class="field">
+    <%= form.label :ヒップ %></br>
+    <%= form.number_field :hips %>cm
+  </div>
+
+  <div class="field">
+    <%= form.label :キャッチコピー %></br>
+    <%= form.text_field :catch_copy %>
+  </div>
+
+  <div class="field">
+    <%= form.label :"Twitter URL" %></br>
+    <%= form.text_field :twitter_url %>
+  </div>
+
+  <div class="field">
+    <%= form.label :写メ日記 %></br>
+    <%= form.text_field :diary %>
+  </div>
+
+  <div class="field w-50">
+  　<%= form.label :セラピストからのメッセージ %></br>
+    <%= form.rich_text_area :therapist_message %>
+  </div>
+
+  <div class="field w-50">
+    <%= form.label :お店からのメッセージ %></br>
+    <%= form.rich_text_area :shop_message %>
+  </div>
+
+  <div>
+    <%= form.label :therapist_images, '画像' %>
+    <%= form.file_field :therapist_images, multiple: true %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "投稿する", class: "btn btn-info col-sm-1" %>
+  </div>
+<% end %>

@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :therapists
   resources :news
   root to: "homes#top"
 
