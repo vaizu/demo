@@ -1,0 +1,55 @@
+<div class="container">
+  <div class="row mt-5">
+    <p id="notice"><%= notice %></p>
+    <h3>機能一覧</h3>
+  </div>
+  <div class="row">
+    <div class="card mt-4 w-100">
+      <div class="card-body">
+        <div class="row">
+          <h5 class="ml-3">新着情報　→　一覧・修正</h5>
+        </div>
+
+        <div class="card mt-2 w-100">
+          <div class="card-body">
+            <div class="row bg-primary text-light p-2">
+              <div class="col-11">
+                <i class="fas fa-comment mr-3"></i>新着情報　→　一覧・修正
+              </div>
+              <div class="col-1">
+                <button type="button" class="text-light bg-primary float-right" data-toggle="collapse" data-target="#demo"><i class="fa fa-minus"></i></button>
+              </div>
+            </div>
+            <div id="demo" class="collapse show">
+              <p class="mt-2", style="line-height:2rem">
+                新着情報の一覧表示です。［修正する］ボタンから内容の修正ができます。
+            </div>
+          </div>
+        </div>
+
+<table class="table table-bordered w-100 mt-5">
+  <thead>
+    <tr>
+      <th class="col-3">投稿日時</th>
+      <th class="col-6">タイトル</th>
+      <th class="col-3">修正</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @news.each do |news| %>
+      <tr>
+        <td><%= news.title %></td>
+        <td><%= news.content %></td>
+        <td>
+        <%= link_to 'Show', news ,class: "btn btn-info" %>
+        <%= link_to 'Edit', edit_news_path(news) ,class: "btn btn-info" %>
+        <%= link_to 'Destroy', news, method: :delete, data: { confirm: 'Are you sure?' } ,class: "btn btn-info" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New News', new_news_path %>

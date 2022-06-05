@@ -1,0 +1,140 @@
+<div class="container">
+
+<p id="notice"><%= notice %></p>
+<div class="row justify-content-center mt-5">
+  <div>
+    <h2>PROFILE</h2>
+    <p class="text-center">プロフィール</p>
+  </div>
+</div>
+
+<div class="row justify-content-center mt-5">
+  <div>
+    <%= @therapist.catch_copy %>
+  </div>
+</div>
+
+<div class="row justify-content-center">
+  <div>
+    <%= @therapist.girl_type %>
+  </div>
+</div>
+
+<div class="row justify-content-center d-flex align-items-end mt-5">
+    <h2><%= @therapist.name %></h2>
+    <h5><%= @therapist.age %>歳</h5>
+</div>
+
+<div class="row justify-content-center d-flex align-items-end">
+    T<%= @therapist.height %>
+    B<%= @therapist.bust %>
+    (<%= @therapist.cup %>)
+    W<%= @therapist.waist %>
+</div>
+
+<div class="row justify-content-center d-flex align-items-end mt-5">
+    <% @therapist.therapist_images.each do |image| %>
+      <%= image_tag(image, width:140) %>
+    <% end %>
+</div>
+
+<div class="row justify-content-center mt-5">
+  <div>
+    <h2>COMMENT</h2>
+    <p class="text-center">コメント</p>
+  </div>
+</div>
+
+<div class="row justify-content-center d-flex align-items-end mt-5">
+    <h5>セラピストより</h5>
+</div>
+
+<div class="row justify-content-center">
+  <div>
+    <%= @therapist.therapist_message %>
+  </div>
+</div>
+
+<div class="row justify-content-center d-flex align-items-end mt-5">
+    <h5>お店より</h5>
+</div>
+
+<div class="row justify-content-center">
+  <div>
+    <%= @therapist.shop_message %>
+  </div>
+</div>
+
+
+<p>
+  <strong>Name:</strong>
+  <%= @therapist.name %>
+</p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @therapist.girl_type %>
+</p>
+
+<p>
+  <strong>Age:</strong>
+  <%= @therapist.age %>
+</p>
+
+<p>
+  <strong>Height:</strong>
+  <%= @therapist.height %>
+</p>
+
+<p>
+  <strong>Cup:</strong>
+  <%= @therapist.cup %>
+</p>
+
+<p>
+  <strong>Bust:</strong>
+  <%= @therapist.bust %>
+</p>
+
+<p>
+  <strong>Waist:</strong>
+  <%= @therapist.waist %>
+</p>
+
+<p>
+  <strong>Hips:</strong>
+  <%= @therapist.hips %>
+</p>
+
+<p>
+  <strong>Catch copy:</strong>
+  <%= @therapist.catch_copy %>
+</p>
+
+<p>
+  <strong>Twitter url:</strong>
+  <%= @therapist.twitter_url %>
+</p>
+
+<p>
+  <strong>Diary:</strong>
+  <%= @therapist.diary %>
+</p>
+
+<p>
+  <strong>Therapist message:</strong>
+  <%= @therapist.therapist_message %>
+</p>
+
+<p>
+  <strong>Shop message:</strong>
+  <%= @therapist.shop_message %>
+</p>
+
+<% @therapist.therapist_images.each do |image| %>
+  <%= image_tag(image, width:100) %>
+<% end %>
+
+<%= link_to 'Edit', edit_therapist_path(@therapist) %> |
+<%= link_to 'Back', therapists_path %>
+</div>
