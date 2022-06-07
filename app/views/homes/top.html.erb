@@ -89,10 +89,14 @@
             <p class="w-100 bg-info text-light p-2 ml-3 mr-3">インフォメーション</p>
 
             <button type="button" class="w-75 btn btn-secondary btn-lg m-1 p-2">
-              <div class="text1">新規登録</div>
+              <div class="text1 link-light">
+                <%= link_to "新規登録", "/infos/new" %>
+              </div>
             </button>
             <button type="button" class="w-75 btn btn-secondary btn-lg m-1 p-2">
-              <div class="text1">一覧・編集</div>
+              <div class="text1 link-light">
+                <%= link_to "一覧・編集", "/infos" %>
+              </div>
             </button>
             <button type="button" class="w-75 btn btn-secondary btn-lg m-1 p-2">
               <div class="text1">非転載中</div>
