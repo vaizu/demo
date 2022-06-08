@@ -1,0 +1,32 @@
+<%= form_with(model: info) do |form| %>
+  <% if info.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(info.errors.count, "error") %> prohibited this info from being saved:</h2>
+
+      <ul>
+        <% info.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :タイトル %></br>
+    <%= form.text_field :infotitle %>
+  </div>
+
+  <div class="field">
+    <%= form.label :'リンクURL' %></br>
+    <%= form.text_field :infolink %>
+  </div>
+
+  <div class="field">
+    <%= form.label :'画像' %></br>
+    <%= form.file_field :info_image, accept: "image/*" %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "投稿する", class: "btn btn-info col-sm-1" %>
+  </div>
+<% end %>

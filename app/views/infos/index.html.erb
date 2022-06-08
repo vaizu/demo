@@ -1,0 +1,73 @@
+<div class="container">
+  <p id="notice"><%= notice %></p>
+  <div class="row mt-5">
+    <h3>機能一覧</h3>
+  </div>
+  <div class="row">
+    <div class="card mt-4 w-100">
+      <div class="card-body">
+        <div class="row">
+          <h5 class="ml-3">インフォメーション　→　一覧修正</h5>
+        </div>
+
+        <div class="card mt-2 w-100">
+          <div class="card-body">
+            <div class="row bg-primary text-light p-2">
+              <div class="col-11">
+                <i class="fas fa-comment mr-3"></i>並び順の変更の仕方
+              </div>
+              <div class="col-1">
+                <button type="button" class="text-light bg-primary float-right" data-toggle="collapse" data-target="#demo2"><i class="fa fa-minus"></i></button>
+              </div>
+            </div>
+            <div id="demo2" class="collapse show">
+              <p class="mt-2", style="line-height:2rem">
+                女性画像をクリックしたまま移動先まで動かします。［　並び順を変更する　］ボタンで決定します。
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <% @infos.each do |info| %>
+          <div class="col-4">
+            <div class="card mt-2 w-100">
+              <div class="card-body">
+                <%= image_tag(info.info_image, width:140) %></br>
+                <%= info.infotitle %></br>
+                <%= info.infolink %></br>
+                <%= link_to '転載内容を変更する', edit_info_path(info) ,class: "btn btn-info mt-2" %>
+              </div>
+            </div>
+          </div>
+          <% end %>
+        </div>
+
+<h1>Infos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Infotitle</th>
+      <th>Infolink</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @infos.each do |info| %>
+      <tr>
+        <td><%= info.infotitle %></td>
+        <td><%= info.infolink %></td>
+        <td><%= image_tag(info.info_image, width:140) %></td>
+        <td><%= link_to 'Show', info %></td>
+        <td><%= link_to 'Edit', edit_info_path(info) %></td>
+        <td><%= link_to 'Destroy', info, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Info', new_info_path %>
