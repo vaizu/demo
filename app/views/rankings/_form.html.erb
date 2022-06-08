@@ -1,0 +1,47 @@
+<%= form_with(model: ranking) do |form| %>
+  <% if ranking.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(ranking.errors.count, "error") %> prohibited this ranking from being saved:</h2>
+
+      <ul>
+        <% ranking.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :タイトル %></br>
+    <%= form.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :第1位 %></br>
+    <%= form.select :first, @therapist.map{ |therapist| [therapist.name, therapist.id] } %>
+  </div>
+
+  <div class="field">
+    <%= form.label :第2位 %></br>
+    <%= form.select :second, @therapist.map{ |therapist| [therapist.name, therapist.id] } %>
+  </div>
+
+  <div class="field">
+    <%= form.label :第3位 %></br>
+    <%= form.select :third, @therapist.map{ |therapist| [therapist.name, therapist.id] } %>
+  </div>
+
+  <div class="field">
+    <%= form.label :第4位 %></br>
+    <%= form.select :fourth, @therapist.map{ |therapist| [therapist.name, therapist.id] } %>
+  </div>
+
+  <div class="field">
+    <%= form.label :第5位 %></br>
+    <%= form.select :fifth, @therapist.map{ |therapist| [therapist.name, therapist.id] } %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

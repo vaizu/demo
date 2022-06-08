@@ -1,0 +1,97 @@
+<div class="container">
+  <p id="notice"><%= notice %></p>
+  <div class="row mt-5">
+    <div class="col-12">
+      <p>
+        <strong>ランキング:</strong>
+        <%= @ranking.title %>
+      </p>
+    </div>
+  </div>
+  <div class="row mt-5">
+    <div class="col-12 col-md-1"></div>
+    <div class="col-12 col-md-2">
+      <div class="card">
+        <div class="card-body">
+          <div class="row d-flex justify-content-center">
+            <p>
+              <strong>第1位</strong></br>
+              <% @first.therapist_images.each do |image| %>
+                <%= image_tag(image, width:140) %></br>
+              <% end %>
+              <%= @first.name %></br>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12 col-md-2">
+      <div class="card">
+        <div class="card-body">
+          <div class="row d-flex justify-content-center">
+            <p>
+              <strong>第2位</strong></br>
+              <% @second.therapist_images.each do |image| %>
+                <%= image_tag(image, width:140) %><br>
+              <% end %>
+              <%= @second.name %>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12 col-md-2">
+      <div class="card">
+        <div class="card-body">
+          <div class="row d-flex justify-content-center">
+            <p>
+              <strong>第3位</strong></br>
+              <% @third.therapist_images.each do |image| %>
+                <%= image_tag(image, width:140) %></br>
+              <% end %>
+              <%= @third.name %>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12 col-md-2">
+      <div class="card">
+        <div class="card-body">
+          <div class="row d-flex justify-content-center">
+            <p>
+              <strong>第4位</strong></br>
+              <% @fourth.therapist_images.each do |image| %>
+                <%= image_tag(image, width:140) %></br>
+              <% end %>
+              <%= @fourth.name %>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12 col-md-2">
+      <div class="card">
+        <div class="card-body">
+          <div class="row d-flex justify-content-center">
+            <p>
+              <strong>第5位</strong></br>
+              <% @fifth.therapist_images.each do |image| %>
+                <%= image_tag(image, width:140) %></br>
+              <% end %>
+              <%= @fifth.name %>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-md-1"></div>
+  </div>
+  <%= link_to 'Edit', edit_ranking_path(@ranking) %> |
+  <%= link_to 'Back', rankings_path %> |
+  <%= link_to "deleate", news_path(@ranking), method: :delete %>
+</div>
