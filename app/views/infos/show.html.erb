@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Infotitle:</strong>
+  <%= @info.infotitle %>
+</p>
+
+<p>
+  <strong>Infolink:</strong>
+  <%= @info.infolink %>
+</p>
+
+<div class="row justify-content-center d-flex align-items-end mt-5">
+      <%= image_tag(@info.info_image, width:140) %>
+</div>
+
+<%= link_to 'Edit', edit_info_path(@info) %> |
+<%= link_to 'Back', infos_path %>
+<%= link_to "deleate", news_path(@info), method: :delete %>

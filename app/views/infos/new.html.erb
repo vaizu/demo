@@ -6,14 +6,14 @@
     <div class="card mt-4 w-100">
       <div class="card-body">
         <div class="row">
-          <h5 class="ml-3">新着情報　→　新規投稿</h5>
+          <h5 class="ml-3">インフォメーション　→　新規投稿</h5>
         </div>
 
         <div class="card mt-2 w-100">
           <div class="card-body">
             <div class="row bg-info text-light p-2">
               <div class="col-11">
-                <i class="fas fa-comment mr-3"></i>新着情報　→　新規投稿
+                <i class="fas fa-comment mr-3"></i>インフォメーション新規登録
               </div>
               <div class="col-1">
                 <button type="button" class="text-light bg-info float-right" data-toggle="collapse" data-target="#demo"><i class="fa fa-minus"></i></button>
@@ -21,16 +21,17 @@
             </div>
             <div id="demo" class="collapse show">
               <p class="mt-2", style="line-height:2rem">
-                新着情報の新規投稿ができます。</br>
-                ※注意　絵文字はテキストで書かれた　(*^^)v　などのみが使用可能です。
+                TOPページのインフォメーションへ表示される画像を登録できます。
+                スライダーにより複数の表示が可能です。
             </div>
           </div>
         </div>
 
-        <%= render 'form', news: @news %>
+        <%= render 'form', info: @info %>
 
-        <%= link_to 'Back', news_index_path %>
-      </div>
+        <%= link_to 'Back', infos_path %>
+     </div>
     </div>
   </div>
 </div>
+
