@@ -1,0 +1,73 @@
+<div class="container">
+  <p id="notice"><%= notice %></p>
+  <div class="row mt-5">
+    <h3>機能一覧</h3>
+  </div>
+  <div class="row">
+    <div class="card mt-4 w-100">
+      <div class="card-body">
+        <div class="row">
+          <h5 class="ml-3">ランキング　→　一覧修正</h5>
+        </div>
+
+        <div class="card mt-2 w-100">
+          <div class="card-body">
+            <div class="row bg-info text-light p-2">
+              <div class="col-11">
+                <i class="fas fa-comment mr-3"></i>ランキング表示について
+              </div>
+              <div class="col-1">
+                <button type="button" class="text-light bg-info float-right" data-toggle="collapse" data-target="#demo"><i class="fa fa-minus"></i></button>
+              </div>
+            </div>
+            <div id="demo" class="collapse show">
+              <p class="mt-2", style="line-height:2rem">
+                ランキングが複数ある場合、1番上のランキングがトップページへ表示されます。</br>
+                ランキングページには全てが表示されます。
+            </div>
+          </div>
+        </div>
+
+        <div class="card mt-2 w-100">
+          <div class="card-body">
+            <div class="row bg-info text-light p-2">
+              <div class="col-11">
+                <i class="fas fa-comment mr-3"></i>並び順の変更の仕方
+              </div>
+              <div class="col-1">
+                <button type="button" class="text-light bg-info float-right" data-toggle="collapse" data-target="#demo"><i class="fa fa-minus"></i></button>
+              </div>
+            </div>
+            <div id="demo" class="collapse show">
+              <p class="mt-2", style="line-height:2rem">
+                対象をクリックしたまま移動先まで動かします。［　並び順を変更する　］ボタンで決定します。
+            </div>
+          </div>
+        </div>
+
+        <table>
+          <thead>
+            <tr>
+              <th><h2>Title</h2></th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <% @rankings.each do |ranking| %>
+              <tr>
+                <td><h3><%= ranking.title %></h3></td>
+                <td><%= link_to 'Show', ranking %></td>
+                <td><%= link_to 'Edit', edit_ranking_path(ranking) %></td>
+                <td><%= link_to 'Destroy', ranking, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+
+        <br>
+
+        <%= link_to 'New Ranking', new_ranking_path %>
+      </div>
+    </div>
+  </div>
+</div>
