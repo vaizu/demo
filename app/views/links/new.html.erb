@@ -1,0 +1,41 @@
+<div class="container">
+  <div class="row mt-5">
+    <h3>機能一覧</h3>
+  </div>
+  <div class="row">
+    <div class="card mt-4 w-100">
+      <div class="card-body">
+        <div class="row">
+          <h5 class="ml-3">リンク → 新規登録</h5>
+        </div>
+
+        <div class="card mt-2 w-100">
+          <div class="card-body">
+            <div class="row bg-info text-light p-2">
+              <div class="col-11">
+                <i class="fas fa-comment mr-3"></i>リンクバナー設置の仕方
+              </div>
+              <div class="col-1">
+                <button type="button" class="text-light bg-info float-right" data-toggle="collapse" data-target="#demo"><i class="fa fa-minus"></i></button>
+              </div>
+            </div>
+            <div id="demo" class="collapse show">
+              <p class="mt-2", style="line-height:2rem">
+                ① リンクの設置場所を選択します。</br>
+                ② バナーサイズを選択します。</br>
+                ③ リンクコード（タグ）がある場合は、コピー＆ペイストでコードを貼りつけて［ 登録する ］ボタンを押してください。</br>
+                ④ リンクコード（タグ）がない場合は、サイト名・サイトURL・バナーを入力し［ 登録する ］ボタンを押してください。</br>
+            </div>
+          </div>
+        </div>
+
+        <%= render 'form', link: @link %>
+
+        <%= link_to 'Back', links_path %>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
