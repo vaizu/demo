@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Link place:</strong>
+  <%= @link.link_place %>
+</p>
+
+<p>
+  <strong>Banner size:</strong>
+  <%= @link.banner_size %>
+</p>
+
+<p>
+  <strong>Link code:</strong>
+  <%= @link.link_code %>
+</p>
+
+<p>
+  <strong>Site name:</strong>
+  <%= @link.site_name %>
+</p>
+
+<p>
+  <strong>Site url:</strong>
+  <%= @link.site_url %>
+</p>
+
+<%= link_to 'Edit', edit_link_path(@link) %> |
+<%= link_to 'Back', links_path %>

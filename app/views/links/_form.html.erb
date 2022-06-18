@@ -1,0 +1,56 @@
+<%= form_with(model: link) do |form| %>
+  <% if link.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(link.errors.count, "error") %> prohibited this link from being saved:</h2>
+
+      <ul>
+        <% link.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <div>
+      <%= form.label :リンク設置場所 %>
+      <div>
+        <%= form.radio_button :link_place, true %>
+        <%= form.label :link_place, 'リンクページのみに設置', value: true %>
+      </div>
+      <div>
+        <%= form.radio_button :link_place, false %>
+        <%= form.label :link_place, 'トップページ及びリンクページに設置', value: false %>
+      </div>
+    </div>
+  </div>
+
+  <div class="field">
+    <%= form.label :バナーサイズ %></br>
+    <%= form.text_field :banner_size %>
+  </div>
+
+  <div class="field w-50">
+    <%= form.label :リンクコード（タグ） %></br>
+    <%= form.text_area :link_code %>
+  </div>
+
+  <div class="field">
+    <%= form.label :サイト名 %></br>
+    <%= form.text_field :site_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :"サイトURL" %></br>
+    <%= form.text_field :site_url %>
+  </div>
+
+  <div class ="field">
+    <%= form.label :"バナー" %></br>
+    <%= form.file_field :banner_image, accept: "image/*" %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

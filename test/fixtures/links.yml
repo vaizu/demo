@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  link_place: false
+  banner_size: MyString
+  link_code: MyString
+  site_name: MyString
+  site_url: MyString
+
+two:
+  link_place: false
+  banner_size: MyString
+  link_code: MyString
+  site_name: MyString
+  site_url: MyString
