@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :links
   resources :rankings
   resources :infos
   resources :therapists

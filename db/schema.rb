@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_06_08_152723) do
+ActiveRecord::Schema.define(version: 2022_06_18_002550) do
 
   create_table "action_text_rich_texts", force: :cascade do |t|
     t.string "name", null: false
@@ -53,6 +53,16 @@ ActiveRecord::Schema.define(version: 2022_06_08_152723) do
   create_table "infos", force: :cascade do |t|
     t.string "infotitle"
     t.string "infolink"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "links", force: :cascade do |t|
+    t.boolean "link_place"
+    t.string "banner_size"
+    t.string "link_code"
+    t.string "site_name"
+    t.string "site_url"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
