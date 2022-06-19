@@ -1,4 +1,32 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <p id="notice"><%= notice %></p>
+  <div class="row mt-5">
+    <h3>機能一覧</h3>
+  </div>
+  <div class="row">
+    <div class="card mt-4 w-100">
+      <div class="card-body">
+        <div class="row">
+          <h5 class="ml-3">リンク → 一覧・修正</h5>
+        </div>
+
+        <div class="card mt-2 w-100">
+          <div class="card-body">
+            <div class="row bg-primary text-light p-2">
+              <div class="col-11">
+                <i class="fas fa-comment mr-3"></i>並び順の変更の仕方
+              </div>
+              <div class="col-1">
+                <button type="button" class="text-light bg-primary float-right" data-toggle="collapse" data-target="#demo2"><i class="fa fa-minus"></i></button>
+              </div>
+            </div>
+            <div id="demo2" class="collapse show">
+              <p class="mt-2", style="line-height:2rem">
+                バナー画像をクリックしたまま移動先まで動かします。［　並び順を変更する　］ボタンで決定します。
+              </p>
+            </div>
+          </div>
+        </div>
 
 <h1>Links</h1>
 
@@ -16,6 +44,11 @@
 
   <tbody>
     <% @links.each do |link| %>
+    <div class="card mt-2 w-50">
+          <div class="card-body m-3">
+            <%= link_to link.link_code do %>
+            <%= image_tag link.banner_image, size:(link.banner_size) %>
+          <% end %>
       <tr>
         <td><%= link.link_place %></td>
         <td><%= link.banner_size %></td>
@@ -26,6 +59,8 @@
         <td><%= link_to 'Edit', edit_link_path(link) %></td>
         <td><%= link_to 'Destroy', link, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
+      </div>
+      </div>
     <% end %>
   </tbody>
 </table>
