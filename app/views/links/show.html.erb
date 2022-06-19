@@ -24,6 +24,11 @@
   <strong>Site url:</strong>
   <%= @link.site_url %>
 </p>
+<p>
+  <strong>banner_image:</strong>
+  <%= image_tag(@link.banner_image, width:140) %>
+</p>
 
 <%= link_to 'Edit', edit_link_path(@link) %> |
-<%= link_to 'Back', links_path %>
+<%= link_to 'Back', links_path %> 
+<%= link_to "deleate", news_path(@link), method: :delete %>

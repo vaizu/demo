@@ -27,7 +27,9 @@
 
   <div class="field">
     <%= form.label :バナーサイズ %></br>
-    <%= form.text_field :banner_size %>
+      <label><%= form.radio_button :banner_size, "88x31" %>88x31px</label>
+      <label><%= form.radio_button :banner_size, "200x40" %>200x40px</label>
+      <label><%= form.radio_button :banner_size, "468x60" %>468x60</label>
   </div>
 
   <div class="field w-50">
