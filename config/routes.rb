@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :widgets
   resources :links
   resources :rankings
   resources :infos

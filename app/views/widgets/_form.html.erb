@@ -1,0 +1,39 @@
+<%= form_with(model: widget) do |form| %>
+  <% if widget.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(widget.errors.count, "error") %> prohibited this widget from being saved:</h2>
+
+      <ul>
+        <% widget.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+      <%= form.label :表示場所（トップページ） %>
+      <div>
+        <%= form.radio_button :location, true %>
+        <%= form.label :location, 'メインフレーム', value: true %>
+      </div>
+      <div>
+        <%= form.radio_button :location, false %>
+        <%= form.label :location, 'サイドフレーム', value: false %>
+      </div>
+    </div>
+
+  <div class="field">
+    <%= form.label :タイトル %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div class="field">
+  　<%= form.label :内容 %>
+    <%= form.rich_text_area :content %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "投稿する", class: "btn btn-info col-sm-1" %>
+  </div>
+<% end %>
