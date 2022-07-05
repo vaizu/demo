@@ -1,0 +1,33 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  login_id: MyString
+  login_pass: MyString
+  customer_tel: 1
+  recruiting_tel: 1
+  mail: MyString
+  opening: MyString
+  closing: MyString
+  reserve: MyString
+  holiday: MyString
+  nearest: MyString
+  address: MyString
+  business_trip: false
+  cast_ja: MyString
+  cast: 
+
+two:
+  login_id: MyString
+  login_pass: MyString
+  customer_tel: 1
+  recruiting_tel: 1
+  mail: MyString
+  opening: MyString
+  closing: MyString
+  reserve: MyString
+  holiday: MyString
+  nearest: MyString
+  address: MyString
+  business_trip: false
+  cast_ja: MyString
+  cast: 
