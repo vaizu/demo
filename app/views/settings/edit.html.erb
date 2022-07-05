@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="row mt-5">
+    <h3>初期設定</h3>
+  </div>
+  <div class="row">
+    <div class="card mt-4 w-100">
+      <div class="card-body">
+        <div class="row">
+          <h5 class="ml-3">店舗基本情報</h5>
+        </div>
+
+        <div class="card mt-2 w-100">
+          <div class="card-body">
+            <div class="row bg-info text-light p-2">
+              <div class="col-11">
+                <i class="fas fa-comment mr-3"></i>店舗の基本情報を登録できます。
+              </div>
+              <div class="col-1">
+                <button type="button" class="text-light bg-info float-right" data-toggle="collapse" data-target="#demo"><i class="fa fa-minus"></i></button>
+              </div>
+            </div>
+            <div id="demo" class="collapse show">
+              <p class="mt-2", style="line-height:2rem">
+                変更したい項目を修正し、最下部の［　変更する　］ボタンを押してください。
+            </div>
+          </div>
+        </div>
+        <%= render 'form', setting: @setting %>
+
+        <%= link_to 'Back', "/" %>
+      </div>
+    </div>
+  </div>
+</div>
+
+
