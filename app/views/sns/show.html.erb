@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Customers line:</strong>
+  <%= @sn.customers_line %>
+</p>
+
+<p>
+  <strong>Line reserve:</strong>
+  <%= @sn.line_reserve %>
+</p>
+
+<p>
+  <strong>Recruiting line:</strong>
+  <%= @sn.recruiting_line %>
+</p>
+
+<p>
+  <strong>Twitter:</strong>
+  <%= @sn.twitter %>
+</p>
+
+<p>
+  <strong>Blog:</strong>
+  <%= @sn.blog %>
+</p>
+
+<%= link_to 'Edit', edit_sn_path(@sn) %> |
+<%= link_to 'Back', sns_path %>

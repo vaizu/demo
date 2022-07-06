@@ -1,0 +1,49 @@
+<%= form_with(model: sn) do |form| %>
+  <% if sn.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(sn.errors.count, "error") %> prohibited this sn from being saved:</h2>
+
+      <ul>
+        <% sn.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :"集客用 LINE URL" %></br>
+    <%= form.text_field :customers_line %>
+  </div>
+
+  <div class="field">
+    <div>
+      <%= form.label :"LINEでの予約" %></br>
+      <div>
+        <%= form.radio_button :line_reserve, true %>
+        <%= form.label :line_reserve, 'LINE予約可能', value: true %>
+        <%= form.radio_button :line_reserve, false %>
+        <%= form.label :line_reserve, 'LINE予約不可能', value: false %>
+      </div>
+    </div>
+  </div>
+
+  <div class="field">
+    <%= form.label :"求人用 LINE URL（集客用と同じでも可）" %></br>
+    <%= form.text_field :recruiting_line %>
+  </div>
+
+  <div class="field">
+    <%= form.label :"Twitter URL" %></br>
+    <%= form.text_field :twitter %>
+  </div>
+
+  <div class="field">
+    <%= form.label :"外部ブログURL" %></br>
+    <%= form.text_field :blog %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "上記の通り変更する", class: "btn btn-info col-sm-1" %>
+  </div>
+<% end %>
