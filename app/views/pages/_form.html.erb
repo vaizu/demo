@@ -1,0 +1,197 @@
+<%= form_with(model: page) do |form| %>
+  <% if page.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(page.errors.count, "error") %> prohibited this page from being saved:</h2>
+
+      <ul>
+        <% page.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <div>
+      <%= form.label :ホーム %>
+      <div>
+        <%= form.radio_button :home, true %>
+        <%= form.label :home, '表示する', value: true %>
+        <%= form.radio_button :home, false %>
+        <%= form.label :home, '表示しない', value: false %>
+      </div>
+    </div>
+  </div>
+
+  <div class="field">
+    <div>
+      <%= form.label :出勤情報 %>
+      <div>
+        <%= form.radio_button :attendance, true %>
+        <%= form.label :attendance, '表示する', value: true %>
+        <%= form.radio_button :attendance, false %>
+        <%= form.label :attendance, '表示しない', value: false %>
+      </div>
+    </div>
+  </div>
+
+  <div class="field">
+    <div>
+      <%= form.label :セラピスト %>
+      <div>
+        <%= form.radio_button :therapist, true %>
+        <%= form.label :therapist, '表示する', value: true %>
+        <%= form.radio_button :therapist, false %>
+        <%= form.label :therapist, '表示しない', value: false %>
+      </div>
+    </div>
+  </div>
+
+  <div class="field">
+    <div>
+      <%= form.label :料金システム %>
+      <div>
+        <%= form.radio_button :price, true %>
+        <%= form.label :price, '表示する', value: true %>
+        <%= form.radio_button :price, false %>
+        <%= form.label :price, '表示しない', value: false %>
+      </div>
+    </div>
+  </div>
+
+  <div class="field">
+    <div>
+      <%= form.label :イベント %>
+      <div>
+        <%= form.radio_button :event, true %>
+        <%= form.label :event, '表示する', value: true %>
+        <%= form.radio_button :event, false %>
+        <%= form.label :event, '表示しない', value: false %>
+      </div>
+    </div>
+  </div>
+
+  <div class="field">
+    <div>
+      <%= form.label :アクセス %>
+      <div>
+        <%= form.radio_button :access, true %>
+        <%= form.label :access, '表示する', value: true %>
+        <%= form.radio_button :access, false %>
+        <%= form.label :access, '表示しない', value: false %>
+      </div>
+    </div>
+  </div>
+
+  <div class="field">
+    <div>
+      <%= form.label :求人情報 %>
+      <div>
+        <%= form.radio_button :recruitment, true %>
+        <%= form.label :recruitment, '表示する', value: true %>
+        <%= form.radio_button :recruitment, false %>
+        <%= form.label :recruitment, '表示しない', value: false %>
+      </div>
+    </div>
+  </div>
+
+  <div class="field">
+    <div>
+      <%= form.label :写メ日記 %>
+      <div>
+        <%= form.radio_button :diary, true %>
+        <%= form.label :diary, '表示する', value: true %>
+        <%= form.radio_button :diary, false %>
+        <%= form.label :diary, '表示しない', value: false %>
+      </div>
+    </div>
+  </div>
+
+  <div class="field">
+    <div>
+      <%= form.label :動画 %>
+      <div>
+        <%= form.radio_button :movie, true %>
+        <%= form.label :movie, '表示する', value: true %>
+        <%= form.radio_button :movie, false %>
+        <%= form.label :movie, '表示しない', value: false %>
+      </div>
+    </div>
+  </div>
+
+  <div class="field">
+    <div>
+      <%= form.label :ランキング %>
+      <div>
+        <%= form.radio_button :ranking, true %>
+        <%= form.label :ranking, '表示する', value: true %>
+        <%= form.radio_button :ranking, false %>
+        <%= form.label :ranking, '表示しない', value: false %>
+      </div>
+    </div>
+  </div>
+
+  <div class="field">
+    <div>
+      <%= form.label :"ご予約（WEB予約機能）" %>
+      <div>
+        <%= form.radio_button :reserve, true %>
+        <%= form.label :reserve, '表示する', value: true %>
+        <%= form.radio_button :reserve, false %>
+        <%= form.label :reserve, '表示しない', value: false %>
+      </div>
+    </div>
+  </div>
+
+  <div class="field">
+    <div>
+      <%= form.label :メールマガジン %>
+      <div>
+        <%= form.radio_button :mail, true %>
+        <%= form.label :mail, '表示する', value: true %>
+        <%= form.radio_button :mail, false %>
+        <%= form.label :mail, '表示しない', value: false %>
+      </div>
+    </div>
+  </div>
+
+  <div class="field">
+    <div>
+      <%= form.label :お問い合わせ %>
+      <div>
+        <%= form.radio_button :inquiry, true %>
+        <%= form.label :inquiry, '表示する', value: true %>
+        <%= form.radio_button :inquiry, false %>
+        <%= form.label :inquiry, '表示しない', value: false %>
+      </div>
+    </div>
+  </div>
+
+  <div class="field">
+    <div>
+      <%= form.label :リンク %>
+      <div>
+        <%= form.radio_button :link, true %>
+        <%= form.label :link, '表示する', value: true %>
+        <%= form.radio_button :link, false %>
+        <%= form.label :link, '表示しない', value: false %>
+      </div>
+    </div>
+  </div>
+
+  <div class="field">
+    <div>
+      <%= form.label :プライバシーポリシー %>
+      <div>
+        <%= form.radio_button :privacy, true %>
+        <%= form.label :privacy, '表示する', value: true %>
+        <%= form.radio_button :privacy, false %>
+        <%= form.label :privacy, '表示しない', value: false %>
+      </div>
+    </div>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "変更する", class: "btn btn-info col-sm-1" %>
+  </div>
+<% end %>
