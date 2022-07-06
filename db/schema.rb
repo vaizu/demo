@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_07_06_061320) do
+ActiveRecord::Schema.define(version: 2022_07_06_080319) do
 
   create_table "action_text_rich_texts", force: :cascade do |t|
     t.string "name", null: false
@@ -70,6 +70,26 @@ ActiveRecord::Schema.define(version: 2022_07_06_061320) do
   create_table "news", force: :cascade do |t|
     t.string "title"
     t.text "content"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "pages", force: :cascade do |t|
+    t.boolean "home"
+    t.boolean "attendance"
+    t.boolean "therapist"
+    t.boolean "price"
+    t.boolean "event"
+    t.boolean "access"
+    t.boolean "recruitment"
+    t.boolean "diary"
+    t.boolean "movie"
+    t.boolean "ranking"
+    t.boolean "reserve"
+    t.boolean "mail"
+    t.boolean "inquiry"
+    t.boolean "link"
+    t.boolean "privacy"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

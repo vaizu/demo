@@ -1,0 +1,35 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  home: false
+  attendance: false
+  therapist: false
+  price: false
+  event: false
+  access: false
+  recruitment: false
+  diary: false
+  movie: false
+  ranking: false
+  reserve: false
+  mail: false
+  inquiry: false
+  link: false
+  privacy: false
+
+two:
+  home: false
+  attendance: false
+  therapist: false
+  price: false
+  event: false
+  access: false
+  recruitment: false
+  diary: false
+  movie: false
+  ranking: false
+  reserve: false
+  mail: false
+  inquiry: false
+  link: false
+  privacy: false
