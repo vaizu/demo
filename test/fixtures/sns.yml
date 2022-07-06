@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  customers_line: MyString
+  line_reserve: false
+  recruiting_line: MyString
+  twitter: MyString
+  blog: MyString
+
+two:
+  customers_line: MyString
+  line_reserve: false
+  recruiting_line: MyString
+  twitter: MyString
+  blog: MyString
