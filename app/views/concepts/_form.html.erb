@@ -1,0 +1,22 @@
+<%= form_with(model: concept) do |form| %>
+  <% if concept.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(concept.errors.count, "error") %> prohibited this concept from being saved:</h2>
+
+      <ul>
+        <% concept.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field w-50">
+    <%= form.label :コンセプト %>
+    <%= form.rich_text_area :concept %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "上記の通り変更する", class: "btn btn-info col-sm-1" %>
+  </div>
+<% end %>
